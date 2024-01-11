@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/neuralnetwork/src-gen" creationIcons="false" editDirectory="/neuralnetwork.edit/src-gen"
+    editorDirectory="/neuralnetwork.editor/src-gen" modelPluginID="neuralnetwork"
+    modelName="Neuralnetwork" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>neuralnetwork.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Neuralnetwork" basePackage="neuralnetwork" disposableProviderFactory="true"
+      ecorePackage="neuralnetwork.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="neuralnetwork.ecore#//ActivationFunction">
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//ActivationFunction/LINEAR"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//ActivationFunction/RELU"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//ActivationFunction/SOFTMAX"/>
+    </genEnums>
+    <genClasses ecoreClass="neuralnetwork.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Model/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference neuralnetwork.ecore#//Model/layers"/>
+    </genClasses>
+    <genClasses ecoreClass="neuralnetwork.ecore#//Layer"/>
+    <genClasses ecoreClass="neuralnetwork.ecore#//Input">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Input/shape"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Input/name"/>
+    </genClasses>
+    <genClasses ecoreClass="neuralnetwork.ecore#//Dense">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Dense/units"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Dense/activationFunction"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

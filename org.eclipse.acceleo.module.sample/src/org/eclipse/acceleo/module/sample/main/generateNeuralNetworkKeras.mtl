@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generateNeuralNetworkKeras.
+ */]
+[module generateNeuralNetworkKeras('http://www.example.org/neuralnetwork')]
+
+
+[**
+ * The documentation of the template generateNeuralNetworkKeras.
+ * @param aModel
+ */]
+[template public generateNeuralNetworkKeras(aModel : Model)]
+[comment @main/]
+[file (aModel.name+'.py', false, 'UTF-8')]
+import keras
+
+[aModel.name/] = keras.Sequential([ '[' /] 
+[for (layer : Layer | aModel.layers)]
+	[if (layer.oclIsKindOf(Input))]
+		[let inputLayer : Input = layer]
+			keras.Input(shape=[inputLayer.shape/])
+		[/let]
+	[/if]
+	[if (layer.oclIsKindOf(Dense))]
+		[let denseLayer : Dense = layer]
+			keras.Dense(units=[denseLayer.units/], activation="[denseLayer.activationFunction.toString().toLower()/]")
+		[/let]
+	[/if]
+[/for]
+			[ ']' /])
+[/file]
+
+[/template]

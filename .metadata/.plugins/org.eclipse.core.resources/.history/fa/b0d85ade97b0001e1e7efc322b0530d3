@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/emf/2002/Ecore')]
+
+[template public generateElement(anEClass : EClass)]
+
+[comment @main/]
+[file ('neuralnetwork.py', false, 'UTF-8')]
+print('Hello world :D')
+[/file]
+[/template]

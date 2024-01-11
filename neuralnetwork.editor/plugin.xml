@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated neuralnetwork -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="neuralnetwork.neuralnetwork.presentation.NeuralnetworkModelWizardID"
+            name="%_UI_NeuralnetworkModelWizard_label"
+            class="neuralnetwork.neuralnetwork.presentation.NeuralnetworkModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/NeuralnetworkModelFile.gif">
+         <description>%_UI_NeuralnetworkModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated neuralnetwork -->
+      <editor
+            id="neuralnetwork.neuralnetwork.presentation.NeuralnetworkEditorID"
+            name="%_UI_NeuralnetworkEditor_label"
+            icon="icons/full/obj16/NeuralnetworkModelFile.gif"
+            extensions="neuralnetwork"
+            class="neuralnetwork.neuralnetwork.presentation.NeuralnetworkEditor"
+            contributorClass="neuralnetwork.neuralnetwork.presentation.NeuralnetworkActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
