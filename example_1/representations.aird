@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:neuralnetwork="http://www.example.org/neuralnetwork" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_GZjoIBFNEe-KXoogNcruzQ" selectedViews="_NNFKYBFNEe-KXoogNcruzQ" version="15.2.0.202303281325">
+    <semanticResources>MyNeuralnetwork.neuralnetwork</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_NNFKYBFNEe-KXoogNcruzQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_HQmq4BN8Ee-K_NUFJD2LHg" name="new Neural Network Diagram" repPath="#_HQNpUBN8Ee-K_NUFJD2LHg" changeId="1715860927229">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']"/>
+        <target xmi:type="neuralnetwork:Model" href="MyNeuralnetwork.neuralnetwork#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_HQNpUBN8Ee-K_NUFJD2LHg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_HQwb4BN8Ee-K_NUFJD2LHg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_HQwb4RN8Ee-K_NUFJD2LHg" type="Sirius" element="_HQNpUBN8Ee-K_NUFJD2LHg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_HRusQBN8Ee-K_NUFJD2LHg" type="2001" element="_HQ9QMBN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HRy9sBN8Ee-K_NUFJD2LHg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HRy9sRN8Ee-K_NUFJD2LHg" x="51" y="14"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSSs8BN8Ee-K_NUFJD2LHg" type="3005" element="_HRGaIBN8Ee-K_NUFJD2LHg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HSSs8RN8Ee-K_NUFJD2LHg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSSs8hN8Ee-K_NUFJD2LHg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HRusQRN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HRusQhN8Ee-K_NUFJD2LHg" x="330" y="220" width="50" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HSFRkBN8Ee-K_NUFJD2LHg" type="2001" element="_HRO9ABN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSF4ohN8Ee-K_NUFJD2LHg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HSF4oxN8Ee-K_NUFJD2LHg" x="51" y="14"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HST7EBN8Ee-K_NUFJD2LHg" type="3005" element="_HRPkEBN8Ee-K_NUFJD2LHg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HST7ERN8Ee-K_NUFJD2LHg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HST7EhN8Ee-K_NUFJD2LHg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HSF4oBN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSF4oRN8Ee-K_NUFJD2LHg" x="330" y="110" width="50" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HSGfsBN8Ee-K_NUFJD2LHg" type="2001" element="_HRQLIBN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSGfsxN8Ee-K_NUFJD2LHg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HSGftBN8Ee-K_NUFJD2LHg" x="51" y="14"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HST7ExN8Ee-K_NUFJD2LHg" type="3005" element="_HRQLIRN8Ee-K_NUFJD2LHg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HST7FBN8Ee-K_NUFJD2LHg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HST7FRN8Ee-K_NUFJD2LHg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HSGfsRN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSGfshN8Ee-K_NUFJD2LHg" x="330" width="50" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HSHGwBN8Ee-K_NUFJD2LHg" type="2001" element="_HRRZQBN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSHt0BN8Ee-K_NUFJD2LHg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HSHt0RN8Ee-K_NUFJD2LHg" x="51" y="14"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HST7FhN8Ee-K_NUFJD2LHg" type="3005" element="_HRSAUBN8Ee-K_NUFJD2LHg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HST7FxN8Ee-K_NUFJD2LHg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HST7GBN8Ee-K_NUFJD2LHg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HSHGwRN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSHGwhN8Ee-K_NUFJD2LHg" x="110" y="110" width="50" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HSJjABN8Ee-K_NUFJD2LHg" type="2001" element="_HRTOcRN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSKKEBN8Ee-K_NUFJD2LHg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HSKKERN8Ee-K_NUFJD2LHg" x="51" y="14"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSUiIBN8Ee-K_NUFJD2LHg" type="3005" element="_HRTOchN8Ee-K_NUFJD2LHg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HSUiIRN8Ee-K_NUFJD2LHg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSUiIhN8Ee-K_NUFJD2LHg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HSJjARN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSJjAhN8Ee-K_NUFJD2LHg" x="2" y="55" width="50" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HSKxIBN8Ee-K_NUFJD2LHg" type="2001" element="_HRVqsRN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSLYMBN8Ee-K_NUFJD2LHg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HSLYMRN8Ee-K_NUFJD2LHg" x="51" y="14"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSUiIxN8Ee-K_NUFJD2LHg" type="3005" element="_HRVqshN8Ee-K_NUFJD2LHg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HSUiJBN8Ee-K_NUFJD2LHg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSUiJRN8Ee-K_NUFJD2LHg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HSKxIRN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSKxIhN8Ee-K_NUFJD2LHg" x="2" y="165" width="50" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_HSL_QBN8Ee-K_NUFJD2LHg" type="2001" element="_HRW40BN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSMmUBN8Ee-K_NUFJD2LHg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HSMmURN8Ee-K_NUFJD2LHg" x="-3" y="-22"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSVJMBN8Ee-K_NUFJD2LHg" type="3005" element="_HRW40RN8Ee-K_NUFJD2LHg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_HSVJMRN8Ee-K_NUFJD2LHg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSVJMhN8Ee-K_NUFJD2LHg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_HSL_QRN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSL_QhN8Ee-K_NUFJD2LHg" x="220" y="110" width="50" height="50"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_HQwb4hN8Ee-K_NUFJD2LHg"/>
+        <edges xmi:type="notation:Edge" xmi:id="_HSXlcBN8Ee-K_NUFJD2LHg" type="4001" element="_HRc_cBN8Ee-K_NUFJD2LHg" source="_HSHGwBN8Ee-K_NUFJD2LHg" target="_HSL_QBN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSYzkBN8Ee-K_NUFJD2LHg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSYzkRN8Ee-K_NUFJD2LHg" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSaBsBN8Ee-K_NUFJD2LHg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSaBsRN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSdFABN8Ee-K_NUFJD2LHg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSdFARN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_HSXlcRN8Ee-K_NUFJD2LHg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HSXlchN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HSXlcxN8Ee-K_NUFJD2LHg" points="[0, 0, -60, 0]$[60, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSoEIBN8Ee-K_NUFJD2LHg" id="(1.0,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSoEIRN8Ee-K_NUFJD2LHg" id="(0.0,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_HSorMBN8Ee-K_NUFJD2LHg" type="4001" element="_HRe0oBN8Ee-K_NUFJD2LHg" source="_HSJjABN8Ee-K_NUFJD2LHg" target="_HSHGwBN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSorNBN8Ee-K_NUFJD2LHg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSorNRN8Ee-K_NUFJD2LHg" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSpSQBN8Ee-K_NUFJD2LHg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSpSQRN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSpSQhN8Ee-K_NUFJD2LHg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSpSQxN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_HSorMRN8Ee-K_NUFJD2LHg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HSorMhN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HSorMxN8Ee-K_NUFJD2LHg" points="[0, 0, -60, -55]$[60, 55, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSp5UBN8Ee-K_NUFJD2LHg" id="(1.0,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSp5URN8Ee-K_NUFJD2LHg" id="(0.0,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_HSp5UhN8Ee-K_NUFJD2LHg" type="4001" element="_HRe0pRN8Ee-K_NUFJD2LHg" source="_HSKxIBN8Ee-K_NUFJD2LHg" target="_HSHGwBN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSqgYBN8Ee-K_NUFJD2LHg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSqgYRN8Ee-K_NUFJD2LHg" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSqgYhN8Ee-K_NUFJD2LHg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSqgYxN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSqgZBN8Ee-K_NUFJD2LHg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSqgZRN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_HSp5UxN8Ee-K_NUFJD2LHg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HSp5VBN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HSp5VRN8Ee-K_NUFJD2LHg" points="[0, 0, -60, 55]$[60, -55, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSrHcBN8Ee-K_NUFJD2LHg" id="(1.0,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSrHcRN8Ee-K_NUFJD2LHg" id="(0.0,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_HSrHchN8Ee-K_NUFJD2LHg" type="4001" element="_HRfbtBN8Ee-K_NUFJD2LHg" source="_HSL_QBN8Ee-K_NUFJD2LHg" target="_HRusQBN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSrHdhN8Ee-K_NUFJD2LHg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSrHdxN8Ee-K_NUFJD2LHg" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSrHeBN8Ee-K_NUFJD2LHg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSrHeRN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSrHehN8Ee-K_NUFJD2LHg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSrHexN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_HSrHcxN8Ee-K_NUFJD2LHg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HSrHdBN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HSrHdRN8Ee-K_NUFJD2LHg" points="[0, 0, -60, -110]$[60, 110, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSrugBN8Ee-K_NUFJD2LHg" id="(1.0,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSrugRN8Ee-K_NUFJD2LHg" id="(0.0,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_HSrughN8Ee-K_NUFJD2LHg" type="4001" element="_HRgCxBN8Ee-K_NUFJD2LHg" source="_HSL_QBN8Ee-K_NUFJD2LHg" target="_HSFRkBN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSruhhN8Ee-K_NUFJD2LHg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSruhxN8Ee-K_NUFJD2LHg" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSruiBN8Ee-K_NUFJD2LHg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSruiRN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSruihN8Ee-K_NUFJD2LHg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSruixN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_HSrugxN8Ee-K_NUFJD2LHg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HSruhBN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HSruhRN8Ee-K_NUFJD2LHg" points="[0, 0, -60, 0]$[60, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSsVkBN8Ee-K_NUFJD2LHg" id="(1.0,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSsVkRN8Ee-K_NUFJD2LHg" id="(0.0,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_HSsVkhN8Ee-K_NUFJD2LHg" type="4001" element="_HRgp1BN8Ee-K_NUFJD2LHg" source="_HSL_QBN8Ee-K_NUFJD2LHg" target="_HSGfsBN8Ee-K_NUFJD2LHg">
+          <children xmi:type="notation:Node" xmi:id="_HSsVlhN8Ee-K_NUFJD2LHg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSsVlxN8Ee-K_NUFJD2LHg" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSsVmBN8Ee-K_NUFJD2LHg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSsVmRN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_HSsVmhN8Ee-K_NUFJD2LHg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSsVmxN8Ee-K_NUFJD2LHg" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_HSsVkxN8Ee-K_NUFJD2LHg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_HSsVlBN8Ee-K_NUFJD2LHg" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HSsVlRN8Ee-K_NUFJD2LHg" points="[0, 0, -60, 110]$[60, -110, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSs8oBN8Ee-K_NUFJD2LHg" id="(1.0,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HSs8oRN8Ee-K_NUFJD2LHg" id="(0.0,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_HRifABN8Ee-K_NUFJD2LHg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_HRifARN8Ee-K_NUFJD2LHg"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HQ9QMBN8Ee-K_NUFJD2LHg" name="title shape: (10000,)" incomingEdges="_HRfbtBN8Ee-K_NUFJD2LHg" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="neuralnetwork:Input" href="MyNeuralnetwork.neuralnetwork#//@layers.0"/>
+      <semanticElements xmi:type="neuralnetwork:Input" href="MyNeuralnetwork.neuralnetwork#//@layers.0"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_HRGaIBN8Ee-K_NUFJD2LHg" labelSize="12" showIcon="false" workspacePath="/neuralnetwork.edit/icons/nn_icons/Input.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HRO9ABN8Ee-K_NUFJD2LHg" name="text_body shape: (10000,)" incomingEdges="_HRgCxBN8Ee-K_NUFJD2LHg" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="neuralnetwork:Input" href="MyNeuralnetwork.neuralnetwork#//@layers.1"/>
+      <semanticElements xmi:type="neuralnetwork:Input" href="MyNeuralnetwork.neuralnetwork#//@layers.1"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_HRPkEBN8Ee-K_NUFJD2LHg" labelSize="12" showIcon="false" workspacePath="/neuralnetwork.edit/icons/nn_icons/Input.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HRQLIBN8Ee-K_NUFJD2LHg" name="tags shape: (100,)" incomingEdges="_HRgp1BN8Ee-K_NUFJD2LHg" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="neuralnetwork:Input" href="MyNeuralnetwork.neuralnetwork#//@layers.2"/>
+      <semanticElements xmi:type="neuralnetwork:Input" href="MyNeuralnetwork.neuralnetwork#//@layers.2"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_HRQLIRN8Ee-K_NUFJD2LHg" labelSize="12" showIcon="false" workspacePath="/neuralnetwork.edit/icons/nn_icons/Input.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HRRZQBN8Ee-K_NUFJD2LHg" name="dense_features units: 64" outgoingEdges="_HRc_cBN8Ee-K_NUFJD2LHg" incomingEdges="_HRe0oBN8Ee-K_NUFJD2LHg _HRe0pRN8Ee-K_NUFJD2LHg" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="neuralnetwork:Dense" href="MyNeuralnetwork.neuralnetwork#//@layers.4"/>
+      <semanticElements xmi:type="neuralnetwork:Dense" href="MyNeuralnetwork.neuralnetwork#//@layers.4"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_HRSAUBN8Ee-K_NUFJD2LHg" labelSize="12" showIcon="false" workspacePath="/neuralnetwork.edit/icons/nn_icons/Dense.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HRTOcRN8Ee-K_NUFJD2LHg" name="priority units: 1" outgoingEdges="_HRe0oBN8Ee-K_NUFJD2LHg" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="neuralnetwork:Dense" href="MyNeuralnetwork.neuralnetwork#//@layers.5"/>
+      <semanticElements xmi:type="neuralnetwork:Dense" href="MyNeuralnetwork.neuralnetwork#//@layers.5"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_HRTOchN8Ee-K_NUFJD2LHg" labelSize="12" showIcon="false" workspacePath="/neuralnetwork.edit/icons/nn_icons/Dense.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HRVqsRN8Ee-K_NUFJD2LHg" name="department units: 4" outgoingEdges="_HRe0pRN8Ee-K_NUFJD2LHg" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="neuralnetwork:Dense" href="MyNeuralnetwork.neuralnetwork#//@layers.6"/>
+      <semanticElements xmi:type="neuralnetwork:Dense" href="MyNeuralnetwork.neuralnetwork#//@layers.6"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_HRVqshN8Ee-K_NUFJD2LHg" labelSize="12" showIcon="false" workspacePath="/neuralnetwork.edit/icons/nn_icons/Dense.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HRW40BN8Ee-K_NUFJD2LHg" name="features" outgoingEdges="_HRfbtBN8Ee-K_NUFJD2LHg _HRgCxBN8Ee-K_NUFJD2LHg _HRgp1BN8Ee-K_NUFJD2LHg" incomingEdges="_HRc_cBN8Ee-K_NUFJD2LHg" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="neuralnetwork:Concatenate" href="MyNeuralnetwork.neuralnetwork#//@layers.3"/>
+      <semanticElements xmi:type="neuralnetwork:Concatenate" href="MyNeuralnetwork.neuralnetwork#//@layers.3"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_HRW40RN8Ee-K_NUFJD2LHg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/neuralnetwork.edit/icons/nn_icons/Concatenate.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Concatenate']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Concatenate']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HRc_cBN8Ee-K_NUFJD2LHg" sourceNode="_HRRZQBN8Ee-K_NUFJD2LHg" targetNode="_HRW40BN8Ee-K_NUFJD2LHg">
+      <target xmi:type="neuralnetwork:Dense" href="MyNeuralnetwork.neuralnetwork#//@layers.4"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HReNkBN8Ee-K_NUFJD2LHg" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HReNkRN8Ee-K_NUFJD2LHg" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HRe0oBN8Ee-K_NUFJD2LHg" sourceNode="_HRTOcRN8Ee-K_NUFJD2LHg" targetNode="_HRRZQBN8Ee-K_NUFJD2LHg">
+      <target xmi:type="neuralnetwork:Dense" href="MyNeuralnetwork.neuralnetwork#//@layers.5"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HRe0oRN8Ee-K_NUFJD2LHg" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HRe0ohN8Ee-K_NUFJD2LHg" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HRe0pRN8Ee-K_NUFJD2LHg" sourceNode="_HRVqsRN8Ee-K_NUFJD2LHg" targetNode="_HRRZQBN8Ee-K_NUFJD2LHg">
+      <target xmi:type="neuralnetwork:Dense" href="MyNeuralnetwork.neuralnetwork#//@layers.6"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HRfbsBN8Ee-K_NUFJD2LHg" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HRfbsRN8Ee-K_NUFJD2LHg" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HRfbtBN8Ee-K_NUFJD2LHg" sourceNode="_HRW40BN8Ee-K_NUFJD2LHg" targetNode="_HQ9QMBN8Ee-K_NUFJD2LHg">
+      <target xmi:type="neuralnetwork:Concatenate" href="MyNeuralnetwork.neuralnetwork#//@layers.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HRgCwBN8Ee-K_NUFJD2LHg" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HRgCwRN8Ee-K_NUFJD2LHg" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HRgCxBN8Ee-K_NUFJD2LHg" sourceNode="_HRW40BN8Ee-K_NUFJD2LHg" targetNode="_HRO9ABN8Ee-K_NUFJD2LHg">
+      <target xmi:type="neuralnetwork:Concatenate" href="MyNeuralnetwork.neuralnetwork#//@layers.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HRgp0BN8Ee-K_NUFJD2LHg" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HRgp0RN8Ee-K_NUFJD2LHg" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_HRgp1BN8Ee-K_NUFJD2LHg" sourceNode="_HRW40BN8Ee-K_NUFJD2LHg" targetNode="_HRQLIBN8Ee-K_NUFJD2LHg">
+      <target xmi:type="neuralnetwork:Concatenate" href="MyNeuralnetwork.neuralnetwork#//@layers.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HRhQ4BN8Ee-K_NUFJD2LHg" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HRhQ4RN8Ee-K_NUFJD2LHg" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_HQZ2kBN8Ee-K_NUFJD2LHg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer"/>
+    <target xmi:type="neuralnetwork:Model" href="MyNeuralnetwork.neuralnetwork#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

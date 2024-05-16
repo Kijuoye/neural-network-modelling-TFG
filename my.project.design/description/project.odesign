@@ -1,31 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="project" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="project" version="12.0.0.2017041100">
   <ownedViewpoints name="MyViewpoint">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Neural Network Diagram" label="Neural Network Diagram" domainClass="neuralnetwork::Model" enablePopupBars="true">
       <metamodel href="../../neuralnetwork/model/neuralnetwork.ecore#/"/>
+      <validationSet>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="ShapeValidation" level="ERROR" message="Invalid Input shape!" targetClass="neuralnetwork::Input">
+          <audits auditExpression="aql: self.shape.matches('\\(None,\\)|\\(\\d+(,\\d*)*\\)')"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="DenseInputValidation" level="ERROR" message="Dense layer expects 1 input!" targetClass="neuralnetwork::Dense">
+          <audits auditExpression="aql: self.previousLayers -> size() &lt;2"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="GRUPreviousValidation" level="ERROR" message="GRU layer expects 1 previous layer!" targetClass="neuralnetwork::GRU">
+          <audits auditExpression="aql: (self.previousLayers -> size() - self.initialState->size()) &lt; 2"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="CustomArgsValidation" level="ERROR" message="Invalid arguments, they must be comma-separated!" targetClass="neuralnetwork::CustomLayer">
+          <audits auditExpression="aql: self.initArguments.matches('\\b\\w+(,\\s*\\w+)*\\b')"/>
+        </ownedRules>
+      </validationSet>
+      <layout xsi:type="description_1:CompositeLayout" direction="LeftToRight"/>
       <defaultLayer name="Default">
         <nodeMappings name="NN_Input" semanticCandidatesExpression="feature:layers" domainClass="neuralnetwork::Input">
-          <style xsi:type="style:DotDescription" labelSize="12" labelExpression="aql:'Shape: ' + self.shape" labelPosition="node" resizeKind="NSEW">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: self.name + ' shape: ' +  self.shape" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/neuralnetwork.edit/icons/nn_icons/Input.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="NN_Dense" semanticCandidatesExpression="feature:layers" domainClass="neuralnetwork::Dense">
-          <style xsi:type="style:DotDescription" labelSize="12" labelExpression="aql: 'Units: '+self.units +'\nAF: '+self.activationFunction" labelPosition="node" resizeKind="NSEW">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: self.name + ' units: ' + self.units" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/neuralnetwork.edit/icons/nn_icons/Dense.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
           </style>
         </nodeMappings>
-        <edgeMappings sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input']" targetFinderExpression="service:getNextLayer()">
-          <style sizeComputationExpression="2">
+        <nodeMappings name="NN_Concatenate" semanticCandidatesExpression="feature:layers" domainClass="neuralnetwork::Concatenate">
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/neuralnetwork.edit/icons/nn_icons/Concatenate.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="NN_Embedding" semanticCandidatesExpression="feature:layers" domainClass="neuralnetwork::Embedding">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/neuralnetwork.edit/icons/nn_icons/Embedding.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="NN_Dropout" semanticCandidatesExpression="feature:layers" domainClass="neuralnetwork::Dropout">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: self.name + ' rate: ' + self.rate" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/neuralnetwork.edit/icons/nn_icons/Dropout.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="NN_Bidirectional" domainClass="neuralnetwork::Bidirectional">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/neuralnetwork.edit/icons/nn_icons/Bidirectional.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="NN_GRU" domainClass="neuralnetwork::GRU">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: self.name + ' units: ' + self.units" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/neuralnetwork.edit/icons/nn_icons/GRU.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="NN_CustomLayer" semanticCandidatesExpression="feature:layers" domainClass="neuralnetwork::CustomLayer">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/neuralnetwork.edit/icons/nn_icons/CustomLayer.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Previous Layers" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dropout'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Bidirectional'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Embedding'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Concatenate'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_GRU'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_CustomLayer']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Concatenate'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dropout'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Embedding'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Bidirectional'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_GRU'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_CustomLayer']" targetFinderExpression="feature:previousLayers">
+          <style sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <edgeMappings name="Initial State" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_GRU']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Bidirectional'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Concatenate'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dropout'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Embedding'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input']" targetFinderExpression="feature:initialState">
+          <style lineStyle="dash_dot" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Bidirectional layer" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Bidirectional']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Bidirectional'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Concatenate'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dropout'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Embedding'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_GRU'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_CustomLayer']" targetFinderExpression="feature:layer">
+          <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Creation">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Input" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Input']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="neuralnetwork::Input" referenceName="layers" variableName=""/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Dense" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dense']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="neuralnetwork::Dense" referenceName="layers" variableName=""/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Concatenate" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Concatenate']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="neuralnetwork::Concatenate" referenceName="layers" variableName=""/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Embedding" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Embedding']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="neuralnetwork::Embedding" referenceName="layers" variableName=""/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Dropout" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Dropout']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="neuralnetwork::Dropout" referenceName="layers" variableName=""/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Bidirectional" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_Bidirectional']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="neuralnetwork::Bidirectional" referenceName="layers" variableName=""/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="GRU" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_GRU']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="neuralnetwork::GRU" referenceName="layers" variableName=""/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Custom Layer" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_CustomLayer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="neuralnetwork::CustomLayer" referenceName="layers" variableName=""/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Relations">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Previous Layers" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Previous%20Layers']" iconPath="/neuralnetwork.edit/icons/nn_icons/PreviousLayers.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="previousLayers" valueExpression="aql: self.previousLayers -> including(target)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Initial State" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Initial%20State']" iconPath="/neuralnetwork.edit/icons/nn_icons/InitialState.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="initialState" valueExpression="aql: target">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="previousLayers" valueExpression="aql:self.previousLayers->including(target) "/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Bidirectional layer" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@edgeMappings[name='Bidirectional%20layer']" iconPath="/neuralnetwork.edit/icons/nn_icons/Bidirectional.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="layer" valueExpression="aql: target">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="previousLayers" valueExpression="aql:self.previousLayers->including(target) "/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="my.project.design.Services"/>

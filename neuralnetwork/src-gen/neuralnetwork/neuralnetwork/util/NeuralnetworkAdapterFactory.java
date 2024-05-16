@@ -87,6 +87,36 @@ public class NeuralnetworkAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseConcatenate(Concatenate object) {
+			return createConcatenateAdapter();
+		}
+
+		@Override
+		public Adapter caseEmbedding(Embedding object) {
+			return createEmbeddingAdapter();
+		}
+
+		@Override
+		public Adapter caseGRU(GRU object) {
+			return createGRUAdapter();
+		}
+
+		@Override
+		public Adapter caseDropout(Dropout object) {
+			return createDropoutAdapter();
+		}
+
+		@Override
+		public Adapter caseBidirectional(Bidirectional object) {
+			return createBidirectionalAdapter();
+		}
+
+		@Override
+		public Adapter caseCustomLayer(CustomLayer object) {
+			return createCustomLayerAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -158,6 +188,90 @@ public class NeuralnetworkAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDenseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link neuralnetwork.neuralnetwork.Concatenate <em>Concatenate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see neuralnetwork.neuralnetwork.Concatenate
+	 * @generated
+	 */
+	public Adapter createConcatenateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link neuralnetwork.neuralnetwork.Embedding <em>Embedding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see neuralnetwork.neuralnetwork.Embedding
+	 * @generated
+	 */
+	public Adapter createEmbeddingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link neuralnetwork.neuralnetwork.GRU <em>GRU</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see neuralnetwork.neuralnetwork.GRU
+	 * @generated
+	 */
+	public Adapter createGRUAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link neuralnetwork.neuralnetwork.Dropout <em>Dropout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see neuralnetwork.neuralnetwork.Dropout
+	 * @generated
+	 */
+	public Adapter createDropoutAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link neuralnetwork.neuralnetwork.Bidirectional <em>Bidirectional</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see neuralnetwork.neuralnetwork.Bidirectional
+	 * @generated
+	 */
+	public Adapter createBidirectionalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link neuralnetwork.neuralnetwork.CustomLayer <em>Custom Layer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see neuralnetwork.neuralnetwork.CustomLayer
+	 * @generated
+	 */
+	public Adapter createCustomLayerAdapter() {
 		return null;
 	}
 

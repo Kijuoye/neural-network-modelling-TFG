@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<neuralnetwork:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:neuralnetwork="http://www.example.org/neuralnetwork" name="test_model" outputLayers="//@layers.2" inputLayers="//@layers.0">
+  <layers xsi:type="neuralnetwork:Input" name="input" shape="(16,)"/>
+  <layers xsi:type="neuralnetwork:Dense" name="hidden" previousLayers="//@layers.0" units="50" activationFunction="RELU"/>
+  <layers xsi:type="neuralnetwork:Dense" name="out" previousLayers="//@layers.1" units="2" activationFunction="SOFTMAX"/>
+</neuralnetwork:Model>

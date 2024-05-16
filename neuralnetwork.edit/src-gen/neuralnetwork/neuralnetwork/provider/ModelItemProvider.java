@@ -57,6 +57,10 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addOptimizerPropertyDescriptor(object);
+			addLossPropertyDescriptor(object);
+			addOutputLayersPropertyDescriptor(object);
+			addInputLayersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,6 +78,67 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 						getString("_UI_PropertyDescriptor_description", "_UI_Model_name_feature", "_UI_Model_type"),
 						NeuralnetworkPackage.Literals.MODEL__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Optimizer feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOptimizerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Model_optimizer_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Model_optimizer_feature",
+								"_UI_Model_type"),
+						NeuralnetworkPackage.Literals.MODEL__OPTIMIZER, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Loss feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLossPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Model_loss_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Model_loss_feature", "_UI_Model_type"),
+						NeuralnetworkPackage.Literals.MODEL__LOSS, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Output Layers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOutputLayersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Model_outputLayers_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Model_outputLayers_feature",
+								"_UI_Model_type"),
+						NeuralnetworkPackage.Literals.MODEL__OUTPUT_LAYERS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Input Layers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputLayersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Model_inputLayers_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Model_inputLayers_feature",
+								"_UI_Model_type"),
+						NeuralnetworkPackage.Literals.MODEL__INPUT_LAYERS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -153,6 +218,8 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 
 		switch (notification.getFeatureID(Model.class)) {
 		case NeuralnetworkPackage.MODEL__NAME:
+		case NeuralnetworkPackage.MODEL__OPTIMIZER:
+		case NeuralnetworkPackage.MODEL__LOSS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case NeuralnetworkPackage.MODEL__LAYERS:
@@ -178,6 +245,24 @@ public class ModelItemProvider extends ItemProviderAdapter implements IEditingDo
 
 		newChildDescriptors.add(createChildParameter(NeuralnetworkPackage.Literals.MODEL__LAYERS,
 				NeuralnetworkFactory.eINSTANCE.createDense()));
+
+		newChildDescriptors.add(createChildParameter(NeuralnetworkPackage.Literals.MODEL__LAYERS,
+				NeuralnetworkFactory.eINSTANCE.createConcatenate()));
+
+		newChildDescriptors.add(createChildParameter(NeuralnetworkPackage.Literals.MODEL__LAYERS,
+				NeuralnetworkFactory.eINSTANCE.createEmbedding()));
+
+		newChildDescriptors.add(createChildParameter(NeuralnetworkPackage.Literals.MODEL__LAYERS,
+				NeuralnetworkFactory.eINSTANCE.createGRU()));
+
+		newChildDescriptors.add(createChildParameter(NeuralnetworkPackage.Literals.MODEL__LAYERS,
+				NeuralnetworkFactory.eINSTANCE.createDropout()));
+
+		newChildDescriptors.add(createChildParameter(NeuralnetworkPackage.Literals.MODEL__LAYERS,
+				NeuralnetworkFactory.eINSTANCE.createBidirectional()));
+
+		newChildDescriptors.add(createChildParameter(NeuralnetworkPackage.Literals.MODEL__LAYERS,
+				NeuralnetworkFactory.eINSTANCE.createCustomLayer()));
 	}
 
 	/**

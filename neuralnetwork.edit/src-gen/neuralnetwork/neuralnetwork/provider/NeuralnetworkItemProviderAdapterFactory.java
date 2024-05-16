@@ -142,6 +142,144 @@ public class NeuralnetworkItemProviderAdapterFactory extends NeuralnetworkAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link neuralnetwork.neuralnetwork.Concatenate} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConcatenateItemProvider concatenateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link neuralnetwork.neuralnetwork.Concatenate}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConcatenateAdapter() {
+		if (concatenateItemProvider == null) {
+			concatenateItemProvider = new ConcatenateItemProvider(this);
+		}
+
+		return concatenateItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link neuralnetwork.neuralnetwork.Embedding} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EmbeddingItemProvider embeddingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link neuralnetwork.neuralnetwork.Embedding}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEmbeddingAdapter() {
+		if (embeddingItemProvider == null) {
+			embeddingItemProvider = new EmbeddingItemProvider(this);
+		}
+
+		return embeddingItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link neuralnetwork.neuralnetwork.GRU} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GRUItemProvider gruItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link neuralnetwork.neuralnetwork.GRU}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGRUAdapter() {
+		if (gruItemProvider == null) {
+			gruItemProvider = new GRUItemProvider(this);
+		}
+
+		return gruItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link neuralnetwork.neuralnetwork.Dropout} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DropoutItemProvider dropoutItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link neuralnetwork.neuralnetwork.Dropout}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDropoutAdapter() {
+		if (dropoutItemProvider == null) {
+			dropoutItemProvider = new DropoutItemProvider(this);
+		}
+
+		return dropoutItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link neuralnetwork.neuralnetwork.Bidirectional} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BidirectionalItemProvider bidirectionalItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link neuralnetwork.neuralnetwork.Bidirectional}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBidirectionalAdapter() {
+		if (bidirectionalItemProvider == null) {
+			bidirectionalItemProvider = new BidirectionalItemProvider(this);
+		}
+
+		return bidirectionalItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link neuralnetwork.neuralnetwork.CustomLayer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CustomLayerItemProvider customLayerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link neuralnetwork.neuralnetwork.CustomLayer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCustomLayerAdapter() {
+		if (customLayerItemProvider == null) {
+			customLayerItemProvider = new CustomLayerItemProvider(this);
+		}
+
+		return customLayerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -252,6 +390,18 @@ public class NeuralnetworkItemProviderAdapterFactory extends NeuralnetworkAdapte
 			inputItemProvider.dispose();
 		if (denseItemProvider != null)
 			denseItemProvider.dispose();
+		if (concatenateItemProvider != null)
+			concatenateItemProvider.dispose();
+		if (embeddingItemProvider != null)
+			embeddingItemProvider.dispose();
+		if (gruItemProvider != null)
+			gruItemProvider.dispose();
+		if (dropoutItemProvider != null)
+			dropoutItemProvider.dispose();
+		if (bidirectionalItemProvider != null)
+			bidirectionalItemProvider.dispose();
+		if (customLayerItemProvider != null)
+			customLayerItemProvider.dispose();
 	}
 
 }

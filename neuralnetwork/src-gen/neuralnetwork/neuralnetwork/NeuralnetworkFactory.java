@@ -49,6 +49,60 @@ public interface NeuralnetworkFactory extends EFactory {
 	Dense createDense();
 
 	/**
+	 * Returns a new object of class '<em>Concatenate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Concatenate</em>'.
+	 * @generated
+	 */
+	Concatenate createConcatenate();
+
+	/**
+	 * Returns a new object of class '<em>Embedding</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Embedding</em>'.
+	 * @generated
+	 */
+	Embedding createEmbedding();
+
+	/**
+	 * Returns a new object of class '<em>GRU</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>GRU</em>'.
+	 * @generated
+	 */
+	GRU createGRU();
+
+	/**
+	 * Returns a new object of class '<em>Dropout</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dropout</em>'.
+	 * @generated
+	 */
+	Dropout createDropout();
+
+	/**
+	 * Returns a new object of class '<em>Bidirectional</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bidirectional</em>'.
+	 * @generated
+	 */
+	Bidirectional createBidirectional();
+
+	/**
+	 * Returns a new object of class '<em>Custom Layer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Custom Layer</em>'.
+	 * @generated
+	 */
+	CustomLayer createCustomLayer();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

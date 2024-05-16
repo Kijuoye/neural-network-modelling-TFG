@@ -1,7 +1,0 @@
-[comment encoding = UTF-8 /]
-[module common()]
-
-
-[template public generateElement(anOclAny : OclAny)]
-
-[/template]

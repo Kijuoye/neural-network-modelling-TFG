@@ -98,6 +98,60 @@ public class NeuralnetworkSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case NeuralnetworkPackage.CONCATENATE: {
+			Concatenate concatenate = (Concatenate) theEObject;
+			T result = caseConcatenate(concatenate);
+			if (result == null)
+				result = caseLayer(concatenate);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case NeuralnetworkPackage.EMBEDDING: {
+			Embedding embedding = (Embedding) theEObject;
+			T result = caseEmbedding(embedding);
+			if (result == null)
+				result = caseLayer(embedding);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case NeuralnetworkPackage.GRU: {
+			GRU gru = (GRU) theEObject;
+			T result = caseGRU(gru);
+			if (result == null)
+				result = caseLayer(gru);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case NeuralnetworkPackage.DROPOUT: {
+			Dropout dropout = (Dropout) theEObject;
+			T result = caseDropout(dropout);
+			if (result == null)
+				result = caseLayer(dropout);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case NeuralnetworkPackage.BIDIRECTIONAL: {
+			Bidirectional bidirectional = (Bidirectional) theEObject;
+			T result = caseBidirectional(bidirectional);
+			if (result == null)
+				result = caseLayer(bidirectional);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case NeuralnetworkPackage.CUSTOM_LAYER: {
+			CustomLayer customLayer = (CustomLayer) theEObject;
+			T result = caseCustomLayer(customLayer);
+			if (result == null)
+				result = caseLayer(customLayer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -160,6 +214,96 @@ public class NeuralnetworkSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDense(Dense object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Concatenate</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Concatenate</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConcatenate(Concatenate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Embedding</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Embedding</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEmbedding(Embedding object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>GRU</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>GRU</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGRU(GRU object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dropout</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dropout</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDropout(Dropout object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bidirectional</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bidirectional</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBidirectional(Bidirectional object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Custom Layer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Custom Layer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCustomLayer(CustomLayer object) {
 		return null;
 	}
 

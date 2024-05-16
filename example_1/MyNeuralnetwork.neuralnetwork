@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<neuralnetwork:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:neuralnetwork="http://www.example.org/neuralnetwork" name="example_1" optimizer="RMSPROP" loss="SPARSE_CATEGORICAL_CROSSENTROPY" outputLayers="//@layers.5 //@layers.6" inputLayers="//@layers.0 //@layers.1 //@layers.2">
+  <layers xsi:type="neuralnetwork:Input" name="title" shape="(10000,)"/>
+  <layers xsi:type="neuralnetwork:Input" name="text_body" shape="(10000,)"/>
+  <layers xsi:type="neuralnetwork:Input" name="tags" shape="(100,)"/>
+  <layers xsi:type="neuralnetwork:Concatenate" name="features" previousLayers="//@layers.0 //@layers.1 //@layers.2"/>
+  <layers xsi:type="neuralnetwork:Dense" name="dense_features" previousLayers="//@layers.3" units="64" activationFunction="RELU"/>
+  <layers xsi:type="neuralnetwork:Dense" name="priority" previousLayers="//@layers.4" units="1" activationFunction="SIGMOID"/>
+  <layers xsi:type="neuralnetwork:Dense" name="department" previousLayers="//@layers.4" units="4" activationFunction="SOFTMAX"/>
+</neuralnetwork:Model>

@@ -3,22 +3,112 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="neuralnetwork" nsURI="http://www.example.org/neuralnetwork"
     nsPrefix="neuralnetwork">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eOperations name="orderOfLayers" upperBound="-1" eType="#//Layer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="layers" upperBound="-1"
         eType="#//Layer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optimizer" eType="#//Optimizer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="loss" eType="#//Loss"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputLayers" lowerBound="1"
+        upperBound="-1" eType="#//Layer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputLayers" lowerBound="1"
+        upperBound="-1" eType="#//Layer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Layer" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Layer" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="previousLayers" upperBound="-1"
+        eType="#//Layer"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActivationFunction">
     <eLiterals name="LINEAR"/>
     <eLiterals name="RELU" value="1"/>
     <eLiterals name="SOFTMAX" value="2"/>
+    <eLiterals name="SIGMOID" value="3"/>
+    <eLiterals name="TANH" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//Layer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="shape" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dtype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sparse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dense" eSuperTypes="#//Layer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="units" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="activationFunction" eType="#//ActivationFunction"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kernelInitializer" eType="#//WeightInitializers"
+        defaultValueLiteral="GLOROT_UNIFORM"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="biasInitializer" eType="#//WeightInitializers"
+        defaultValueLiteral="ZEROS"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useBias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Concatenate" eSuperTypes="#//Layer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="axis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Embedding" eSuperTypes="#//Layer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputDim" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputDim" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maskZero" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="embeddingsInitializer"
+        eType="#//WeightInitializers" defaultValueLiteral="RANDOM_UNIFORM"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GRU" eSuperTypes="#//Layer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="units" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activationFunction" eType="#//ActivationFunction"
+        defaultValueLiteral="TANH"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnSequences" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialState" eType="#//Layer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recurrentActivation" eType="#//ActivationFunction"
+        defaultValueLiteral="SIGMOID"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useBias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kernelInitializer" eType="#//WeightInitializers"
+        defaultValueLiteral="GLOROT_UNIFORM"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recurrentInitializer" eType="#//WeightInitializers"
+        defaultValueLiteral="ORTHOGONAL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="biasInitializer" eType="#//WeightInitializers"
+        defaultValueLiteral="ZEROS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dropout" eSuperTypes="#//Layer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        defaultValueLiteral="0.5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Optimizer">
+    <eLiterals name="SGD"/>
+    <eLiterals name="RMSPROP" value="1"/>
+    <eLiterals name="ADAM" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Loss">
+    <eLiterals name="BINARY_CROSSENTROPY"/>
+    <eLiterals name="BINARY_FOCAL_CROSSENTROPY" value="1"/>
+    <eLiterals name="CATEGORICAL_CROSSENTROPY" value="2"/>
+    <eLiterals name="SPARSE_CATEGORICAL_CROSSENTROPY" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bidirectional" eSuperTypes="#//Layer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mergeMode" eType="#//MergeMode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layer" eType="#//Layer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MergeMode">
+    <eLiterals name="SUM" literal="SUM"/>
+    <eLiterals name="MUL" value="1"/>
+    <eLiterals name="CONCAT" value="2"/>
+    <eLiterals name="AVE" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomLayer" eSuperTypes="#//Layer">
+    <eOperations name="getInitArgumentsParsed" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initArguments" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="WeightInitializers">
+    <eLiterals name="RANDOM_UNIFORM"/>
+    <eLiterals name="RANDOM_NORMAL" value="1"/>
+    <eLiterals name="CONSTANT" value="2"/>
+    <eLiterals name="TRUNCATED_NORMAL" value="3"/>
+    <eLiterals name="ORTHOGONAL" value="5"/>
+    <eLiterals name="IDENTITY" value="6"/>
+    <eLiterals name="ONES" value="6"/>
+    <eLiterals name="ZEROS" value="7"/>
+    <eLiterals name="GLOROT_UNIFORM" value="8"/>
   </eClassifiers>
 </ecore:EPackage>

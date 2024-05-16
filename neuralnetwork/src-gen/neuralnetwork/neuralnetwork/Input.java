@@ -12,7 +12,8 @@ package neuralnetwork.neuralnetwork;
  * </p>
  * <ul>
  *   <li>{@link neuralnetwork.neuralnetwork.Input#getShape <em>Shape</em>}</li>
- *   <li>{@link neuralnetwork.neuralnetwork.Input#getName <em>Name</em>}</li>
+ *   <li>{@link neuralnetwork.neuralnetwork.Input#getDtype <em>Dtype</em>}</li>
+ *   <li>{@link neuralnetwork.neuralnetwork.Input#isSparse <em>Sparse</em>}</li>
  * </ul>
  *
  * @see neuralnetwork.neuralnetwork.NeuralnetworkPackage#getInput()
@@ -43,25 +44,47 @@ public interface Input extends Layer {
 	void setShape(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Dtype</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see neuralnetwork.neuralnetwork.NeuralnetworkPackage#getInput_Name()
+	 * @return the value of the '<em>Dtype</em>' attribute.
+	 * @see #setDtype(String)
+	 * @see neuralnetwork.neuralnetwork.NeuralnetworkPackage#getInput_Dtype()
 	 * @model
 	 * @generated
 	 */
-	String getName();
+	String getDtype();
 
 	/**
-	 * Sets the value of the '{@link neuralnetwork.neuralnetwork.Input#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link neuralnetwork.neuralnetwork.Input#getDtype <em>Dtype</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Dtype</em>' attribute.
+	 * @see #getDtype()
 	 * @generated
 	 */
-	void setName(String value);
+	void setDtype(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Sparse</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sparse</em>' attribute.
+	 * @see #setSparse(boolean)
+	 * @see neuralnetwork.neuralnetwork.NeuralnetworkPackage#getInput_Sparse()
+	 * @model
+	 * @generated
+	 */
+	boolean isSparse();
+
+	/**
+	 * Sets the value of the '{@link neuralnetwork.neuralnetwork.Input#isSparse <em>Sparse</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sparse</em>' attribute.
+	 * @see #isSparse()
+	 * @generated
+	 */
+	void setSparse(boolean value);
 
 } // Input

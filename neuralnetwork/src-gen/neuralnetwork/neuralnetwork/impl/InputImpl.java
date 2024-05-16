@@ -6,9 +6,7 @@ import neuralnetwork.neuralnetwork.Input;
 import neuralnetwork.neuralnetwork.NeuralnetworkPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -20,7 +18,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link neuralnetwork.neuralnetwork.impl.InputImpl#getShape <em>Shape</em>}</li>
- *   <li>{@link neuralnetwork.neuralnetwork.impl.InputImpl#getName <em>Name</em>}</li>
+ *   <li>{@link neuralnetwork.neuralnetwork.impl.InputImpl#getDtype <em>Dtype</em>}</li>
+ *   <li>{@link neuralnetwork.neuralnetwork.impl.InputImpl#isSparse <em>Sparse</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,24 +46,44 @@ public class InputImpl extends LayerImpl implements Input {
 	protected String shape = SHAPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getDtype() <em>Dtype</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getDtype()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String DTYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getDtype() <em>Dtype</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getDtype()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String dtype = DTYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isSparse() <em>Sparse</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSparse()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SPARSE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSparse() <em>Sparse</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSparse()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean sparse = SPARSE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,8 +133,8 @@ public class InputImpl extends LayerImpl implements Input {
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public String getDtype() {
+		return dtype;
 	}
 
 	/**
@@ -124,11 +143,35 @@ public class InputImpl extends LayerImpl implements Input {
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setDtype(String newDtype) {
+		String oldDtype = dtype;
+		dtype = newDtype;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NeuralnetworkPackage.INPUT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, NeuralnetworkPackage.INPUT__DTYPE, oldDtype, dtype));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSparse() {
+		return sparse;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSparse(boolean newSparse) {
+		boolean oldSparse = sparse;
+		sparse = newSparse;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NeuralnetworkPackage.INPUT__SPARSE, oldSparse,
+					sparse));
 	}
 
 	/**
@@ -141,8 +184,10 @@ public class InputImpl extends LayerImpl implements Input {
 		switch (featureID) {
 		case NeuralnetworkPackage.INPUT__SHAPE:
 			return getShape();
-		case NeuralnetworkPackage.INPUT__NAME:
-			return getName();
+		case NeuralnetworkPackage.INPUT__DTYPE:
+			return getDtype();
+		case NeuralnetworkPackage.INPUT__SPARSE:
+			return isSparse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,8 +203,11 @@ public class InputImpl extends LayerImpl implements Input {
 		case NeuralnetworkPackage.INPUT__SHAPE:
 			setShape((String) newValue);
 			return;
-		case NeuralnetworkPackage.INPUT__NAME:
-			setName((String) newValue);
+		case NeuralnetworkPackage.INPUT__DTYPE:
+			setDtype((String) newValue);
+			return;
+		case NeuralnetworkPackage.INPUT__SPARSE:
+			setSparse((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,8 +224,11 @@ public class InputImpl extends LayerImpl implements Input {
 		case NeuralnetworkPackage.INPUT__SHAPE:
 			setShape(SHAPE_EDEFAULT);
 			return;
-		case NeuralnetworkPackage.INPUT__NAME:
-			setName(NAME_EDEFAULT);
+		case NeuralnetworkPackage.INPUT__DTYPE:
+			setDtype(DTYPE_EDEFAULT);
+			return;
+		case NeuralnetworkPackage.INPUT__SPARSE:
+			setSparse(SPARSE_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -193,8 +244,10 @@ public class InputImpl extends LayerImpl implements Input {
 		switch (featureID) {
 		case NeuralnetworkPackage.INPUT__SHAPE:
 			return SHAPE_EDEFAULT == null ? shape != null : !SHAPE_EDEFAULT.equals(shape);
-		case NeuralnetworkPackage.INPUT__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case NeuralnetworkPackage.INPUT__DTYPE:
+			return DTYPE_EDEFAULT == null ? dtype != null : !DTYPE_EDEFAULT.equals(dtype);
+		case NeuralnetworkPackage.INPUT__SPARSE:
+			return sparse != SPARSE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -212,8 +265,10 @@ public class InputImpl extends LayerImpl implements Input {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (shape: ");
 		result.append(shape);
-		result.append(", name: ");
-		result.append(name);
+		result.append(", dtype: ");
+		result.append(dtype);
+		result.append(", sparse: ");
+		result.append(sparse);
 		result.append(')');
 		return result.toString();
 	}

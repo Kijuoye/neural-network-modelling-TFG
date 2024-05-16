@@ -46,6 +46,9 @@ public class DenseItemProvider extends LayerItemProvider {
 
 			addUnitsPropertyDescriptor(object);
 			addActivationFunctionPropertyDescriptor(object);
+			addKernelInitializerPropertyDescriptor(object);
+			addBiasInitializerPropertyDescriptor(object);
+			addUseBiasPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,6 +85,53 @@ public class DenseItemProvider extends LayerItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Kernel Initializer feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addKernelInitializerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Dense_kernelInitializer_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Dense_kernelInitializer_feature",
+								"_UI_Dense_type"),
+						NeuralnetworkPackage.Literals.DENSE__KERNEL_INITIALIZER, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Bias Initializer feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBiasInitializerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Dense_biasInitializer_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Dense_biasInitializer_feature",
+								"_UI_Dense_type"),
+						NeuralnetworkPackage.Literals.DENSE__BIAS_INITIALIZER, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Use Bias feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUseBiasPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Dense_useBias_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Dense_useBias_feature", "_UI_Dense_type"),
+						NeuralnetworkPackage.Literals.DENSE__USE_BIAS, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns Dense.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,8 +160,9 @@ public class DenseItemProvider extends LayerItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Dense dense = (Dense) object;
-		return getString("_UI_Dense_type") + " " + dense.getUnits();
+		String label = ((Dense) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Dense_type")
+				: getString("_UI_Dense_type") + " " + label;
 	}
 
 	/**
@@ -128,6 +179,9 @@ public class DenseItemProvider extends LayerItemProvider {
 		switch (notification.getFeatureID(Dense.class)) {
 		case NeuralnetworkPackage.DENSE__UNITS:
 		case NeuralnetworkPackage.DENSE__ACTIVATION_FUNCTION:
+		case NeuralnetworkPackage.DENSE__KERNEL_INITIALIZER:
+		case NeuralnetworkPackage.DENSE__BIAS_INITIALIZER:
+		case NeuralnetworkPackage.DENSE__USE_BIAS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

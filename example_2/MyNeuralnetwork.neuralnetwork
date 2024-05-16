@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<neuralnetwork:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:neuralnetwork="http://www.example.org/neuralnetwork" name="example_2" optimizer="RMSPROP" loss="SPARSE_CATEGORICAL_CROSSENTROPY" outputLayers="//@layers.5" inputLayers="//@layers.0 //@layers.1">
+  <layers xsi:type="neuralnetwork:Input" name="english" shape="(None,)"/>
+  <layers xsi:type="neuralnetwork:Input" name="spanish" shape="(None,)"/>
+  <layers xsi:type="neuralnetwork:Embedding" name="embedding" previousLayers="//@layers.0" inputDim="15000" outputDim="256" maskZero="true"/>
+  <layers xsi:type="neuralnetwork:Embedding" name="embedding2" previousLayers="//@layers.1" inputDim="15000" outputDim="256" maskZero="true"/>
+  <layers xsi:type="neuralnetwork:Dropout" name="dropout" previousLayers="//@layers.7"/>
+  <layers xsi:type="neuralnetwork:Dense" name="dense2" previousLayers="//@layers.4" units="15000" activationFunction="SOFTMAX"/>
+  <layers xsi:type="neuralnetwork:GRU" name="gru" units="1024"/>
+  <layers xsi:type="neuralnetwork:GRU" name="gru2" previousLayers="//@layers.3 //@layers.8" units="1024" returnSequences="true" initialState="//@layers.8"/>
+  <layers xsi:type="neuralnetwork:Bidirectional" name="bidi" previousLayers="//@layers.6 //@layers.2" layer="//@layers.6"/>
+</neuralnetwork:Model>

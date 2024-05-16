@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:neuralnetwork="http://www.example.org/neuralnetwork" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_EdiYsA4eEe-ajfgeVlxzUA" selectedViews="_KhA-EA4eEe-ajfgeVlxzUA" version="15.2.0.202303281325">
+    <semanticResources>customLayerModel.neuralnetwork</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_KhA-EA4eEe-ajfgeVlxzUA">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_KwNQoA4eEe-ajfgeVlxzUA" name="new Neural Network Diagram" repPath="#_KwMCgA4eEe-ajfgeVlxzUA" changeId="1715711107946">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']"/>
+        <target xmi:type="neuralnetwork:Model" href="customLayerModel.neuralnetwork#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_KwMCgA4eEe-ajfgeVlxzUA">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_KwPF0A4eEe-ajfgeVlxzUA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_KwPF0Q4eEe-ajfgeVlxzUA" type="Sirius" element="_KwMCgA4eEe-ajfgeVlxzUA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_TyN8UA4hEe-9kd4bb73Mdg" type="2001" element="_TyGnkA4hEe-9kd4bb73Mdg">
+          <children xmi:type="notation:Node" xmi:id="_TyS00A4hEe-9kd4bb73Mdg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_TyS00Q4hEe-9kd4bb73Mdg" x="-1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_TyVREA4hEe-9kd4bb73Mdg" type="3005" element="_TyGnkQ4hEe-9kd4bb73Mdg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_TyVREQ4hEe-9kd4bb73Mdg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TyVREg4hEe-9kd4bb73Mdg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_TyN8UQ4hEe-9kd4bb73Mdg" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TyN8Ug4hEe-9kd4bb73Mdg" x="235" y="225" width="61" height="61"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_KwPF0g4eEe-ajfgeVlxzUA"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_KwPs4A4eEe-ajfgeVlxzUA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_KwPs4Q4eEe-ajfgeVlxzUA"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_TyGnkA4hEe-9kd4bb73Mdg" name="tranformer_encoder" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="neuralnetwork:CustomLayer" href="customLayerModel.neuralnetwork#//@layers.0"/>
+      <semanticElements xmi:type="neuralnetwork:CustomLayer" href="customLayerModel.neuralnetwork#//@layers.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_TyGnkQ4hEe-9kd4bb73Mdg" labelSize="12" showIcon="false" workspacePath="/neuralnetwork.edit/icons/nn_icons/CustomLayer.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_CustomLayer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer/@nodeMappings[name='NN_CustomLayer']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_KwMpkA4eEe-ajfgeVlxzUA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/my.project.design/description/project.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Neural%20Network%20Diagram']/@defaultLayer"/>
+    <target xmi:type="neuralnetwork:Model" href="customLayerModel.neuralnetwork#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

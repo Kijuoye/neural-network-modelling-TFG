@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuralnetwork:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:neuralnetwork="http://www.example.org/neuralnetwork" name="custom" outputLayers="//@layers.0" inputLayers="//@layers.0">
+  <layers xsi:type="neuralnetwork:CustomLayer" name="tranformer_encoder" initArguments="embed_dim,dense_dim,num_heads" className="TransformerEncoder"/>
+</neuralnetwork:Model>

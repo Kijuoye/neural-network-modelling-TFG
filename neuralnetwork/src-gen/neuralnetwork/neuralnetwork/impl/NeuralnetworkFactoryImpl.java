@@ -63,6 +63,18 @@ public class NeuralnetworkFactoryImpl extends EFactoryImpl implements Neuralnetw
 			return createInput();
 		case NeuralnetworkPackage.DENSE:
 			return createDense();
+		case NeuralnetworkPackage.CONCATENATE:
+			return createConcatenate();
+		case NeuralnetworkPackage.EMBEDDING:
+			return createEmbedding();
+		case NeuralnetworkPackage.GRU:
+			return createGRU();
+		case NeuralnetworkPackage.DROPOUT:
+			return createDropout();
+		case NeuralnetworkPackage.BIDIRECTIONAL:
+			return createBidirectional();
+		case NeuralnetworkPackage.CUSTOM_LAYER:
+			return createCustomLayer();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -78,6 +90,14 @@ public class NeuralnetworkFactoryImpl extends EFactoryImpl implements Neuralnetw
 		switch (eDataType.getClassifierID()) {
 		case NeuralnetworkPackage.ACTIVATION_FUNCTION:
 			return createActivationFunctionFromString(eDataType, initialValue);
+		case NeuralnetworkPackage.OPTIMIZER:
+			return createOptimizerFromString(eDataType, initialValue);
+		case NeuralnetworkPackage.LOSS:
+			return createLossFromString(eDataType, initialValue);
+		case NeuralnetworkPackage.MERGE_MODE:
+			return createMergeModeFromString(eDataType, initialValue);
+		case NeuralnetworkPackage.WEIGHT_INITIALIZERS:
+			return createWeightInitializersFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -93,6 +113,14 @@ public class NeuralnetworkFactoryImpl extends EFactoryImpl implements Neuralnetw
 		switch (eDataType.getClassifierID()) {
 		case NeuralnetworkPackage.ACTIVATION_FUNCTION:
 			return convertActivationFunctionToString(eDataType, instanceValue);
+		case NeuralnetworkPackage.OPTIMIZER:
+			return convertOptimizerToString(eDataType, instanceValue);
+		case NeuralnetworkPackage.LOSS:
+			return convertLossToString(eDataType, instanceValue);
+		case NeuralnetworkPackage.MERGE_MODE:
+			return convertMergeModeToString(eDataType, instanceValue);
+		case NeuralnetworkPackage.WEIGHT_INITIALIZERS:
+			return convertWeightInitializersToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -136,6 +164,72 @@ public class NeuralnetworkFactoryImpl extends EFactoryImpl implements Neuralnetw
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Concatenate createConcatenate() {
+		ConcatenateImpl concatenate = new ConcatenateImpl();
+		return concatenate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Embedding createEmbedding() {
+		EmbeddingImpl embedding = new EmbeddingImpl();
+		return embedding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public GRU createGRU() {
+		GRUImpl gru = new GRUImpl();
+		return gru;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Dropout createDropout() {
+		DropoutImpl dropout = new DropoutImpl();
+		return dropout;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Bidirectional createBidirectional() {
+		BidirectionalImpl bidirectional = new BidirectionalImpl();
+		return bidirectional;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CustomLayer createCustomLayer() {
+		CustomLayerImpl customLayer = new CustomLayerImpl();
+		return customLayer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ActivationFunction createActivationFunctionFromString(EDataType eDataType, String initialValue) {
 		ActivationFunction result = ActivationFunction.get(initialValue);
 		if (result == null)
@@ -150,6 +244,94 @@ public class NeuralnetworkFactoryImpl extends EFactoryImpl implements Neuralnetw
 	 * @generated
 	 */
 	public String convertActivationFunctionToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Optimizer createOptimizerFromString(EDataType eDataType, String initialValue) {
+		Optimizer result = Optimizer.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOptimizerToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Loss createLossFromString(EDataType eDataType, String initialValue) {
+		Loss result = Loss.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLossToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MergeMode createMergeModeFromString(EDataType eDataType, String initialValue) {
+		MergeMode result = MergeMode.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMergeModeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WeightInitializers createWeightInitializersFromString(EDataType eDataType, String initialValue) {
+		WeightInitializers result = WeightInitializers.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertWeightInitializersToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

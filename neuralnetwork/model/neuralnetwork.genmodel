@@ -14,19 +14,93 @@
       <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//ActivationFunction/LINEAR"/>
       <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//ActivationFunction/RELU"/>
       <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//ActivationFunction/SOFTMAX"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//ActivationFunction/SIGMOID"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//ActivationFunction/TANH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="neuralnetwork.ecore#//Optimizer">
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//Optimizer/SGD"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//Optimizer/RMSPROP"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//Optimizer/ADAM"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="neuralnetwork.ecore#//Loss">
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//Loss/BINARY_CROSSENTROPY"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//Loss/BINARY_FOCAL_CROSSENTROPY"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//Loss/CATEGORICAL_CROSSENTROPY"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//Loss/SPARSE_CATEGORICAL_CROSSENTROPY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="neuralnetwork.ecore#//MergeMode">
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//MergeMode/SUM"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//MergeMode/MUL"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//MergeMode/CONCAT"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//MergeMode/AVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="neuralnetwork.ecore#//WeightInitializers">
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//WeightInitializers/RANDOM_UNIFORM"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//WeightInitializers/RANDOM_NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//WeightInitializers/CONSTANT"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//WeightInitializers/TRUNCATED_NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//WeightInitializers/ORTHOGONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//WeightInitializers/IDENTITY"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//WeightInitializers/ONES"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//WeightInitializers/ZEROS"/>
+      <genEnumLiterals ecoreEnumLiteral="neuralnetwork.ecore#//WeightInitializers/GLOROT_UNIFORM"/>
     </genEnums>
     <genClasses ecoreClass="neuralnetwork.ecore#//Model">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Model/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference neuralnetwork.ecore#//Model/layers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Model/optimizer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Model/loss"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference neuralnetwork.ecore#//Model/outputLayers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference neuralnetwork.ecore#//Model/inputLayers"/>
+      <genOperations ecoreOperation="neuralnetwork.ecore#//Model/orderOfLayers"/>
     </genClasses>
-    <genClasses ecoreClass="neuralnetwork.ecore#//Layer"/>
+    <genClasses ecoreClass="neuralnetwork.ecore#//Layer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Layer/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference neuralnetwork.ecore#//Layer/previousLayers"/>
+    </genClasses>
     <genClasses ecoreClass="neuralnetwork.ecore#//Input">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Input/shape"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Input/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Input/dtype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Input/sparse"/>
     </genClasses>
     <genClasses ecoreClass="neuralnetwork.ecore#//Dense">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Dense/units"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Dense/activationFunction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Dense/kernelInitializer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Dense/biasInitializer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Dense/useBias"/>
+    </genClasses>
+    <genClasses ecoreClass="neuralnetwork.ecore#//Concatenate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Concatenate/axis"/>
+    </genClasses>
+    <genClasses ecoreClass="neuralnetwork.ecore#//Embedding">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Embedding/inputDim"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Embedding/outputDim"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Embedding/maskZero"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Embedding/embeddingsInitializer"/>
+    </genClasses>
+    <genClasses ecoreClass="neuralnetwork.ecore#//GRU">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//GRU/units"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//GRU/activationFunction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//GRU/returnSequences"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference neuralnetwork.ecore#//GRU/initialState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//GRU/recurrentActivation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//GRU/useBias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//GRU/kernelInitializer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//GRU/recurrentInitializer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//GRU/biasInitializer"/>
+    </genClasses>
+    <genClasses ecoreClass="neuralnetwork.ecore#//Dropout">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Dropout/rate"/>
+    </genClasses>
+    <genClasses ecoreClass="neuralnetwork.ecore#//Bidirectional">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//Bidirectional/mergeMode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference neuralnetwork.ecore#//Bidirectional/layer"/>
+    </genClasses>
+    <genClasses ecoreClass="neuralnetwork.ecore#//CustomLayer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//CustomLayer/initArguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute neuralnetwork.ecore#//CustomLayer/className"/>
+      <genOperations ecoreOperation="neuralnetwork.ecore#//CustomLayer/getInitArgumentsParsed"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

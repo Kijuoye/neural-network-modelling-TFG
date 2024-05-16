@@ -46,7 +46,25 @@ public enum ActivationFunction implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SOFTMAX(2, "SOFTMAX", "SOFTMAX");
+	SOFTMAX(2, "SOFTMAX", "SOFTMAX"),
+	/**
+	 * The '<em><b>SIGMOID</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	 * @see #SIGMOID_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SIGMOID(3, "SIGMOID", "SIGMOID"),
+	/**
+	 * The '<em><b>TANH</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	 * @see #TANH_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	TANH(4, "TANH", "TANH");
 
 	/**
 	 * The '<em><b>LINEAR</b></em>' literal value.
@@ -82,12 +100,35 @@ public enum ActivationFunction implements Enumerator {
 	public static final int SOFTMAX_VALUE = 2;
 
 	/**
+	 * The '<em><b>SIGMOID</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SIGMOID
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SIGMOID_VALUE = 3;
+
+	/**
+	 * The '<em><b>TANH</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #TANH
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int TANH_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Activation Function</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ActivationFunction[] VALUES_ARRAY = new ActivationFunction[] { LINEAR, RELU, SOFTMAX, };
+	private static final ActivationFunction[] VALUES_ARRAY = new ActivationFunction[] { LINEAR, RELU, SOFTMAX, SIGMOID,
+			TANH, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Activation Function</b></em>' enumerators.
@@ -149,6 +190,10 @@ public enum ActivationFunction implements Enumerator {
 			return RELU;
 		case SOFTMAX_VALUE:
 			return SOFTMAX;
+		case SIGMOID_VALUE:
+			return SIGMOID;
+		case TANH_VALUE:
+			return TANH;
 		}
 		return null;
 	}

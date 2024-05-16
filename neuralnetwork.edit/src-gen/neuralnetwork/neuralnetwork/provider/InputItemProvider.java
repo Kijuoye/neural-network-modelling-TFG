@@ -45,7 +45,8 @@ public class InputItemProvider extends LayerItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addShapePropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
+			addDtypePropertyDescriptor(object);
+			addSparsePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -66,18 +67,33 @@ public class InputItemProvider extends LayerItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Dtype feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addDtypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Input_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Input_name_feature", "_UI_Input_type"),
-						NeuralnetworkPackage.Literals.INPUT__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_Input_dtype_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Input_dtype_feature", "_UI_Input_type"),
+						NeuralnetworkPackage.Literals.INPUT__DTYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sparse feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSparsePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Input_sparse_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Input_sparse_feature", "_UI_Input_type"),
+						NeuralnetworkPackage.Literals.INPUT__SPARSE, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -127,7 +143,8 @@ public class InputItemProvider extends LayerItemProvider {
 
 		switch (notification.getFeatureID(Input.class)) {
 		case NeuralnetworkPackage.INPUT__SHAPE:
-		case NeuralnetworkPackage.INPUT__NAME:
+		case NeuralnetworkPackage.INPUT__DTYPE:
+		case NeuralnetworkPackage.INPUT__SPARSE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
