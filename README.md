@@ -26,6 +26,4 @@ This project is a neural network modelling tool, developed as a bachelor's final
 
 ## License
 
-## License
-
 This project is licensed under the [Eclipse Public License 2.0](https://www.eclipse.org/legal/epl-2.0/).
